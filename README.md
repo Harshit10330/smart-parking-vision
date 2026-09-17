@@ -1,17 +1,3 @@
-
-Those should **not** be in the actual README.
-
-Also, the `-  Empty parking summary ` lines have extra spaces, which are harmless but unnecessary.
-
-### The important part
-
-If what you pasted above is exactly what's currently inside `README.md`, **don't push it yet**.
-
-Let's do this cleanly:
-
-**Step 1:** In Notepad, press **Ctrl + A** and replace everything with the following **plain README text**. I am intentionally removing almost all Markdown code fences so there is much less chance of corruption.
-
-```markdown
 # Smart Parking Vision
 
 A computer vision project that detects parking spaces and classifies them as empty or occupied using YOLO and the PKLot dataset.
