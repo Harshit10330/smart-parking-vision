@@ -1,3 +1,17 @@
+
+Those should **not** be in the actual README.
+
+Also, the `-  Empty parking summary ` lines have extra spaces, which are harmless but unnecessary.
+
+### The important part
+
+If what you pasted above is exactly what's currently inside `README.md`, **don't push it yet**.
+
+Let's do this cleanly:
+
+**Step 1:** In Notepad, press **Ctrl + A** and replace everything with the following **plain README text**. I am intentionally removing almost all Markdown code fences so there is much less chance of corruption.
+
+```markdown
 # Smart Parking Vision
 
 A computer vision project that detects parking spaces and classifies them as empty or occupied using YOLO and the PKLot dataset.
@@ -6,112 +20,120 @@ A computer vision project that detects parking spaces and classifies them as emp
 
 Smart Parking Vision uses a YOLO object detection model to identify parking spaces in parking-lot images.
 
-The system:
+The system can:
 
-- Detects parking spaces.
-- Classifies each detected space as `space-empty` or `space-occupied`.
-- Calculates total parking spaces.
-- Calculates empty and occupied spaces.
-- Calculates parking occupancy percentage.
-- Produces an annotated output image.
+- Detect parking spaces
+- Classify spaces as empty or occupied
+- Calculate total parking spaces
+- Calculate empty spaces
+- Calculate occupied spaces
+- Calculate parking occupancy percentage
+- Generate an annotated output image
 
 ## Dataset
 
 The project uses the PKLot dataset in YOLO format.
 
-Dataset classes:
+The dataset contains two classes:
 
-- `0` - `space-empty`
-- `1` - `space-occupied`
+- Class 0: space-empty
+- Class 1: space-occupied
 
 Dataset split:
 
 - Training images: 8,691
 - Validation images: 2,483
 - Test images: 1,242
+- Total images: 12,416
 
 ## Model
 
 The project uses YOLO11n through Ultralytics.
 
-The trained model is saved locally as:
+The trained model is stored locally at:
 
-`runs/detect/runs/smart_parking/weights/best.pt`
+runs/detect/runs/smart_parking/weights/best.pt
 
-The trained model is intentionally excluded from the GitHub repository because model files are large.
+The trained model is excluded from GitHub because model files are large.
 
-## Validation Results
+## Model Evaluation
 
-Validation was performed on 2,483 images.
+The trained model was evaluated on the validation dataset.
 
-| Metric | Result |
-|---|---:|
-| Precision | 0.961 |
-| Recall | 0.972 |
-| mAP@50 | 0.980 |
-| mAP@50-95 | 0.773 |
+Validation results:
 
-Class-wise validation results:
+- Precision: 0.961
+- Recall: 0.972
+- mAP@50: 0.980
+- mAP@50-95: 0.773
 
-| Class | Precision | Recall | mAP@50 | mAP@50-95 |
-|---|---:|---:|---:|---:|
-| space-empty | 0.973 | 0.947 | 0.976 | 0.776 |
-| space-occupied | 0.950 | 0.997 | 0.985 | 0.769 |
+Class-wise results:
 
-These values are measurements from the validation run and should not be interpreted as guaranteed real-world performance.
+### space-empty
+
+- Precision: 0.973
+- Recall: 0.947
+- mAP@50: 0.976
+- mAP@50-95: 0.776
+
+### space-occupied
+
+- Precision: 0.950
+- Recall: 0.997
+- mAP@50: 0.985
+- mAP@50-95: 0.769
+
+These results are measurements from the validation dataset and do not guarantee the same performance in real-world parking environments.
+
+The model was also used to generate predictions for all 1,242 test images.
 
 ## Project Structure
 
-```text
 smart-parking-vision/
-├── config/
-│   ├── config.yaml
-│   └── parking_slots.json
-├── data/
-│   ├── input/
-│   └── pklot_dataset/
-├── docs/
-│   ├── README.md
-│   └── statement.md
-├── models/
-├── outputs/
-├── src/
-│   ├── __init__.py
-│   ├── detector.py
-│   ├── main.py
-│   └── parking.py
-├── tests/
-│   └── test_parking.py
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
+config/
+config.yaml
+parking_slots.json
+data/
+input/
+pklot_dataset/
+docs/
+README.md
+statement.md
+models/
+outputs/
+src/
+__init__.py
+detector.py
+main.py
+parking.py
+tests/
+test_parking.py
+.gitignore
+README.md
+requirements.txt
 
 ## Installation
 
-Install the required Python packages:
+Create and activate a Python virtual environment.
 
-```powershell
+Install the required packages:
+
 pip install -r requirements.txt
-```
 
 ## Usage
 
-Run the parking detection application with an image:
+The application can be executed from the project root.
 
-```powershell
+Example:
+
 python .\src\main.py --image ".\data\pklot_dataset\test\images\2013-04-16_10_20_04_jpg.rf.cf2eeba0fef298a616a157669246fabe.jpg"
-```
 
-You can also specify a custom model:
+A custom trained model can also be specified:
 
-```powershell
 python .\src\main.py --image ".\path\to\parking_image.jpg" --model ".\path\to\best.pt"
-```
 
-The application prints a parking summary similar to:
+Example output:
 
-```text
 Smart Parking Vision
 --------------------
 Total spaces: 43
@@ -119,23 +141,20 @@ Empty spaces: 1
 Occupied spaces: 42
 Occupancy: 97.67%
 Output saved to: outputs\parking_result.jpg
-```
 
-The annotated result is saved to:
+The annotated image is saved to:
 
-```text
 outputs/parking_result.jpg
-```
 
 ## Testing
 
-Run the automated tests with:
+The project includes automated tests for the parking summary functionality.
 
-```powershell
+Run the tests using:
+
 pytest
-```
 
-The project contains tests covering:
+The test suite covers:
 
 - Empty parking summary
 - Full parking summary
@@ -144,9 +163,7 @@ The project contains tests covering:
 
 Expected result:
 
-```text
 4 passed
-```
 
 ## Example Result
 
@@ -157,9 +174,11 @@ For one test image, the system detected:
 - Occupied spaces: 42
 - Occupancy: 97.67%
 
-An annotated image was generated in the outputs directory.
+The system generated an annotated parking image as the output.
 
 ## Technologies
+
+The project uses:
 
 - Python 3.12
 - OpenCV
@@ -170,52 +189,44 @@ An annotated image was generated in the outputs directory.
 - PyYAML
 - Pytest
 
-## Model Evaluation
-
-The trained YOLO model was evaluated using the validation split provided by the dataset.
-
-The evaluation produced:
-
-- Precision: 0.961
-- Recall: 0.972
-- mAP@50: 0.980
-- mAP@50-95: 0.773
-
-The model was also tested on all 1,242 images in the test directory for prediction generation.
-
 ## Dataset Attribution
 
-The PKLot dataset version used for this project was obtained in YOLO format from Roboflow. The dataset metadata identifies the dataset license as CC BY 4.0.
+The PKLot dataset used in this project was obtained in YOLO format from Roboflow.
+
+The dataset metadata identifies the license as CC BY 4.0.
 
 Dataset source:
 
 https://universe.roboflow.com/brad-dwyer/pklot-1tros/dataset/2
 
+The dataset remains subject to its original license and attribution requirements.
+
 ## Limitations
 
-The current system operates on parking-lot images and relies on object detection to identify parking spaces.
+The current system works with parking-lot images and uses object detection to identify parking spaces.
 
-Performance can vary with:
+Performance may vary depending on:
 
-- Different camera viewpoints
+- Camera viewpoint
 - Lighting conditions
 - Occlusions
 - Image quality
-- Parking-lot layouts that differ from the training data
+- Parking-lot layout
+- Differences between training images and real-world environments
 
-The reported validation metrics are specific to the dataset split used during evaluation.
+The reported evaluation results are specific to the dataset split used for evaluation.
 
 ## Future Improvements
 
 Possible future improvements include:
 
-- Real-time camera/video processing
-- Parking-space tracking across video frames
+- Real-time video processing
+- Parking-space tracking
 - Automatic parking-slot mapping
-- Web-based dashboard
+- Web-based parking dashboard
 - Historical occupancy statistics
 - Multiple camera support
-- Deployment on edge devices
+- Edge-device deployment
 
 ## License
 
