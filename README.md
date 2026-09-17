@@ -1,4 +1,4 @@
-\# Smart Parking Vision
+# Smart Parking Vision
 
 
 
@@ -6,7 +6,7 @@ A computer vision project that detects parking spaces and classifies them as emp
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -18,21 +18,21 @@ The system:
 
 
 
-\- Detects parking spaces.
+- Detects parking spaces.
 
-\- Classifies each detected space as `space-empty` or `space-occupied`.
+- Classifies each detected space as `space-empty` or `space-occupied`.
 
-\- Calculates total parking spaces.
+- Calculates total parking spaces.
 
-\- Calculates empty and occupied spaces.
+- Calculates empty and occupied spaces.
 
-\- Calculates parking occupancy percentage.
+- Calculates parking occupancy percentage.
 
-\- Produces an annotated output image.
+- Produces an annotated output image.
 
 
 
-\## Dataset
+## Dataset
 
 
 
@@ -44,9 +44,9 @@ Dataset classes:
 
 
 
-\- `0` - `space-empty`
+- `0` - `space-empty`
 
-\- `1` - `space-occupied`
+- `1` - `space-occupied`
 
 
 
@@ -54,15 +54,15 @@ Dataset split:
 
 
 
-\- Training images: 8,691
+- Training images: 8,691
 
-\- Validation images: 2,483
+- Validation images: 2,483
 
-\- Test images: 1,242
+- Test images: 1,242
 
 
 
-\## Model
+## Model
 
 
 
@@ -82,7 +82,7 @@ The trained model is intentionally excluded from the GitHub repository because m
 
 
 
-\## Validation Results
+## Validation Results
 
 
 
@@ -122,7 +122,7 @@ These values are measurements from the validation run and should not be interpre
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -172,7 +172,7 @@ smart-parking-vision/
 
 
 
-\## Installation
+## Installation
 
 
 
@@ -184,7 +184,7 @@ pip install -r requirements.txt
 
 
 
-\## Usage
+## Usage
 
 
 
@@ -210,7 +210,7 @@ The application prints a parking summary similar to:
 
 Smart Parking Vision
 
-\--------------------
+--------------------
 
 Total spaces: 43
 
@@ -232,7 +232,7 @@ outputs/parking\_result.jpg
 
 
 
-\## Testing
+## Testing
 
 
 
@@ -248,13 +248,13 @@ The project contains tests covering:
 
 
 
-\- Empty parking summary
+- Empty parking summary
 
-\- Full parking summary
+- Full parking summary
 
-\- Mixed parking summary
+- Mixed parking summary
 
-\- YOLO detection summary conversion
+- YOLO detection summary conversion
 
 
 
@@ -266,7 +266,7 @@ Expected result:
 
 
 
-\## Example Result
+## Example Result
 
 
 
@@ -274,13 +274,13 @@ For one test image, the system detected:
 
 
 
-\- Total spaces: 43
+- Total spaces: 43
 
-\- Empty spaces: 1
+- Empty spaces: 1
 
-\- Occupied spaces: 42
+- Occupied spaces: 42
 
-\- Occupancy: 97.67%
+- Occupancy: 97.67%
 
 
 
@@ -288,29 +288,29 @@ An annotated image was generated in the outputs directory.
 
 
 
-\## Technologies
+## Technologies
 
 
 
-\- Python 3.12
+- Python 3.12
 
-\- OpenCV
+- OpenCV
 
-\- NumPy
+- NumPy
 
-\- Pandas
+- Pandas
 
-\- Matplotlib
+- Matplotlib
 
-\- Ultralytics YOLO
+- Ultralytics YOLO
 
-\- PyYAML
+- PyYAML
 
-\- Pytest
+- Pytest
 
 
 
-\## Model Evaluation
+## Model Evaluation
 
 
 
@@ -322,13 +322,13 @@ The evaluation produced:
 
 
 
-\- Precision: 0.961
+- Precision: 0.961
 
-\- Recall: 0.972
+- Recall: 0.972
 
-\- mAP@50: 0.980
+- mAP@50: 0.980
 
-\- mAP@50-95: 0.773
+- mAP@50-95: 0.773
 
 
 
@@ -336,7 +336,7 @@ The model was also tested on all 1,242 images in the test directory for predicti
 
 
 
-\## Dataset Attribution
+## Dataset Attribution
 
 
 
@@ -352,7 +352,7 @@ https://universe.roboflow.com/brad-dwyer/pklot-1tros/dataset/2
 
 
 
-\## Limitations
+## Limitations
 
 
 
@@ -364,15 +364,15 @@ Performance can vary with:
 
 
 
-\- Different camera viewpoints
+- Different camera viewpoints
 
-\- Lighting conditions
+- Lighting conditions
 
-\- Occlusions
+- Occlusions
 
-\- Image quality
+- Image quality
 
-\- Parking-lot layouts that differ from the training data
+- Parking-lot layouts that differ from the training data
 
 
 
@@ -380,7 +380,7 @@ The reported validation metrics are specific to the dataset split used during ev
 
 
 
-\## Future Improvements
+## Future Improvements
 
 
 
@@ -388,23 +388,23 @@ Possible future improvements include:
 
 
 
-\- Real-time camera/video processing
+- Real-time camera/video processing
 
-\- Parking-space tracking across video frames
+- Parking-space tracking across video frames
 
-\- Automatic parking-slot mapping
+- Automatic parking-slot mapping
 
-\- Web-based dashboard
+- Web-based dashboard
 
-\- Historical occupancy statistics
+- Historical occupancy statistics
 
-\- Multiple camera support
+- Multiple camera support
 
-\- Deployment on edge devices
+- Deployment on edge devices
 
 
 
-\## License
+## License
 
 
 
@@ -413,4 +413,5 @@ This project was developed for educational purposes as a computer vision project
 
 
 The dataset remains subject to its original license and attribution requirements.
+
 
