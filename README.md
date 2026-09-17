@@ -74,7 +74,7 @@ The trained model is saved locally as:
 
 
 
-`runs/detect/runs/smart\_parking/weights/best.pt`
+`runs/detect/runs/smart_parking/weights/best.pt`
 
 
 
@@ -132,13 +132,13 @@ smart-parking-vision/
 
 │   ├── config.yaml
 
-│   └── parking\_slots.json
+│   └── parking_slots.json
 
 ├── data/
 
 │   ├── input/
 
-│   └── pklot\_dataset/
+│   └── pklot_dataset/
 
 ├── docs/
 
@@ -152,7 +152,7 @@ smart-parking-vision/
 
 ├── src/
 
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 
 │   ├── detector.py
 
@@ -162,7 +162,7 @@ smart-parking-vision/
 
 ├── tests/
 
-│   └── test\_parking.py
+│   └── test_parking.py
 
 ├── .gitignore
 
@@ -192,7 +192,7 @@ Run the parking detection application with an image:
 
 
 
-python .\\src\\main.py --image ".\\data\\pklot\_dataset\\test\\images\\2013-04-16\_10\_20\_04\_jpg.rf.cf2eeba0fef298a616a157669246fabe.jpg"
+python .\\src\\main.py --image ".\\data\\pklot_dataset\\test\\images\\2013-04-16_10_20_04_jpg.rf.cf2eeba0fef298a616a157669246fabe.jpg"
 
 
 
@@ -200,7 +200,7 @@ You can also specify a custom model:
 
 
 
-python .\\src\\main.py --image ".\\path\\to\\parking\_image.jpg" --model ".\\path\\to\\best.pt"
+python .\\src\\main.py --image ".\\path\\to\\parking_image.jpg" --model ".\\path\\to\\best.pt"
 
 
 
@@ -220,7 +220,7 @@ Occupied spaces: 42
 
 Occupancy: 97.67%
 
-Output saved to: outputs\\parking\_result.jpg
+Output saved to: outputs\\parking_result.jpg
 
 
 
@@ -228,7 +228,7 @@ The annotated result is saved to:
 
 
 
-outputs/parking\_result.jpg
+outputs/parking_result.jpg
 
 
 
@@ -413,5 +413,6 @@ This project was developed for educational purposes as a computer vision project
 
 
 The dataset remains subject to its original license and attribution requirements.
+
 
 
